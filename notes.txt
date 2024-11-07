@@ -1,0 +1,23 @@
+cvlib==0.2.7
+opencv-python==4.10.0.84
+opencv-python-headless==4.10.0.84
+Pillow==11.0.0
+tensorflow==2.18.0
+uvicorn==0.32.0
+python-multipart==0.0.17
+fastapi==0.115.4
+nest-asyncio==1.6.0
+
+
+pip installed==24.3.1
+
+
+pip install fastapi[standard]
+pip install uvicorn[standard]
+pip install opencv-python
+pip install opencv-python-headless
+pip install cvlib
+
+pip install python-multipart
+pip install nest-asyncio
+!pip show opencv-python-headless (checking the version)
