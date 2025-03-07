@@ -27,9 +27,25 @@
         "import numpy as np\n",
         "from IPython.display import Image, display"
       ],
-      "outputs": [],
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "ModuleNotFoundError",
+          "evalue": "No module named 'cv2'",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mModuleNotFoundError\u001b[0m                       Traceback (most recent call last)",
+            "Cell \u001b[0;32mIn[1], line 3\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[38;5;28;01mimport\u001b[39;00m \u001b[38;5;21;01mos\u001b[39;00m\n\u001b[1;32m      2\u001b[0m \u001b[38;5;28;01mimport\u001b[39;00m \u001b[38;5;21;01mio\u001b[39;00m\n\u001b[0;32m----> 3\u001b[0m \u001b[38;5;28;01mimport\u001b[39;00m \u001b[38;5;21;01mcv2\u001b[39;00m\n\u001b[1;32m      4\u001b[0m \u001b[38;5;28;01mimport\u001b[39;00m \u001b[38;5;21;01mrequests\u001b[39;00m\n\u001b[1;32m      5\u001b[0m \u001b[38;5;28;01mimport\u001b[39;00m \u001b[38;5;21;01mnumpy\u001b[39;00m \u001b[38;5;28;01mas\u001b[39;00m \u001b[38;5;21;01mnp\u001b[39;00m\n",
+            "\u001b[0;31mModuleNotFoundError\u001b[0m: No module named 'cv2'"
+          ]
+        }
+      ],
       "execution_count": 1,
-      "metadata": {},
+      "metadata": {
+        "gather": {
+          "logged": 1741305645198
+        }
+      },
       "id": "d0a1f572"
     },
     {
@@ -40,8 +56,12 @@
         "model = 'yolov3-tiny'"
       ],
       "outputs": [],
-      "execution_count": 2,
-      "metadata": {},
+      "execution_count": null,
+      "metadata": {
+        "gather": {
+          "logged": 1741305645431
+        }
+      },
       "id": "94937964"
     },
     {
@@ -50,18 +70,13 @@
         "url_with_endpoint_no_params = base_url + endpoint\n",
         "url_with_endpoint_no_params"
       ],
-      "outputs": [
-        {
-          "output_type": "execute_result",
-          "execution_count": 20,
-          "data": {
-            "text/plain": "'http://localhost:8000/predict'"
-          },
-          "metadata": {}
+      "outputs": [],
+      "execution_count": null,
+      "metadata": {
+        "gather": {
+          "logged": 1741305645447
         }
-      ],
-      "execution_count": 20,
-      "metadata": {},
+      },
       "id": "af9271e2"
     },
     {
@@ -70,18 +85,13 @@
         "full_url = url_with_endpoint_no_params + \"?model=\" + model\n",
         "full_url"
       ],
-      "outputs": [
-        {
-          "output_type": "execute_result",
-          "execution_count": 21,
-          "data": {
-            "text/plain": "'http://localhost:8000/predict?model=yolov3-tiny'"
-          },
-          "metadata": {}
+      "outputs": [],
+      "execution_count": null,
+      "metadata": {
+        "gather": {
+          "logged": 1741305645462
         }
-      ],
-      "execution_count": 21,
-      "metadata": {},
+      },
       "id": "678543ef"
     },
     {
@@ -126,8 +136,12 @@
         "    return response"
       ],
       "outputs": [],
-      "execution_count": 14,
-      "metadata": {},
+      "execution_count": null,
+      "metadata": {
+        "gather": {
+          "logged": 1741305645478
+        }
+      },
       "id": "7659652c"
     },
     {
@@ -144,15 +158,13 @@
         "with open(\"images/clock2.jpg\", \"rb\") as image_file:\n",
         "    prediction = response_from_server(full_url, image_file)"
       ],
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": "Everything went well!\n"
+      "outputs": [],
+      "execution_count": null,
+      "metadata": {
+        "gather": {
+          "logged": 1741305645497
         }
-      ],
-      "execution_count": 15,
-      "metadata": {},
+      },
       "id": "7b579658"
     },
     {
@@ -173,8 +185,12 @@
         "    os.mkdir(dir_name)"
       ],
       "outputs": [],
-      "execution_count": 16,
-      "metadata": {},
+      "execution_count": null,
+      "metadata": {
+        "gather": {
+          "logged": 1741305645513
+        }
+      },
       "id": "ed0fdfd3"
     },
     {
@@ -205,8 +221,12 @@
         "    display(Image(f'images_predicted/{filename}'))"
       ],
       "outputs": [],
-      "execution_count": 17,
-      "metadata": {},
+      "execution_count": null,
+      "metadata": {
+        "gather": {
+          "logged": 1741305645526
+        }
+      },
       "id": "3386a1fc"
     },
     {
@@ -299,10 +319,22 @@
     },
     {
       "cell_type": "code",
-      "source": [],
-      "outputs": [],
-      "execution_count": null,
-      "metadata": {},
+      "source": [
+        "!pip show azure-ai-ml"
+      ],
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "Name: azure-ai-ml\r\nVersion: 1.25.0\r\nSummary: Microsoft Azure Machine Learning Client Library for Python\r\nHome-page: https://github.com/Azure/azure-sdk-for-python\r\nAuthor: Microsoft Corporation\r\nAuthor-email: azuresdkengsysadmins@microsoft.com\r\nLicense: MIT License\r\nLocation: /anaconda/envs/azureml_py38/lib/python3.10/site-packages\r\nRequires: azure-common, azure-core, azure-mgmt-core, azure-monitor-opentelemetry, azure-storage-blob, azure-storage-file-datalake, azure-storage-file-share, colorama, isodate, jsonschema, marshmallow, msrest, pydash, pyjwt, pyyaml, strictyaml, tqdm, typing-extensions\r\nRequired-by: \r\n"
+        }
+      ],
+      "execution_count": 3,
+      "metadata": {
+        "gather": {
+          "logged": 1741305758862
+        }
+      },
       "id": "c845871c-5b94-48ad-8e32-28f395dffe9a"
     }
   ],
@@ -327,6 +359,11 @@
     "microsoft": {
       "ms_spell_check": {
         "ms_spell_check_language": "en"
+      },
+      "host": {
+        "AzureML": {
+          "notebookHasBeenCompleted": true
+        }
       }
     },
     "kernel_info": {
